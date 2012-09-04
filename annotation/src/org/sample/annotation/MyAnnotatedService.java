@@ -3,6 +3,7 @@
  */
 package org.sample.annotation;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 
 /**
@@ -18,9 +19,12 @@ public class MyAnnotatedService {
 				for (Method m : clazz.getMethods()) {
 					if (e.getMethodName().equals(m.getName())) {
 						boolean isAuditPresent = m.isAnnotationPresent(Audit.class);
-						System.out.println("Method: " + m.getName() +  " Is Audit annotation present?: "
+						System.out.println("Method: " + m.getName() + " Is Audit annotation present?: "
 							+ isAuditPresent);
-						if (isAuditPresent) System.out.println("****");
+						if (isAuditPresent) {
+							for (Annotation a : m.getAnnotations())
+								System.out.println("****:" + a.toString());
+						}
 					}
 				}
 
