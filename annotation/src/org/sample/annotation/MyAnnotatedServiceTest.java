@@ -24,7 +24,7 @@ public class MyAnnotatedServiceTest {
 	 * @throws NoSuchMethodException 
 	 */
 	@Test
-	public final void testTestMethod1() throws NoSuchMethodException, SecurityException, ClassNotFoundException {
+	public final void testTestMethod1()  {
 		new MyAnnotatedService().testMethod1();
 
 //		for (Method method : MyAnnotatedService.class.getDeclaredMethods()) {
@@ -46,7 +46,7 @@ public class MyAnnotatedServiceTest {
 	 * @throws ClassNotFoundException 
 	 */
 	@Test
-	public final void testTestMethod2() throws NoSuchMethodException, SecurityException, ClassNotFoundException {
+	public final void testTestMethod2() throws NoSuchMethodException, SecurityException  {
 		
 				new MyAnnotatedService3().testMethod1();
 				assertTrue("Is annotated method",
